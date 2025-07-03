@@ -25,7 +25,15 @@ namespace Asigmment_oop01
             Name = name;
             Age = age;
         }
-     //===========================================================
+        //===========================================================
+        //Q3
+        enum Season
+        {
+            Spring,
+            Summer,
+            Autumn,
+            Winter
+        }
         class Program
         {
 
@@ -46,6 +54,9 @@ namespace Asigmment_oop01
                 #endregion
 
                 #region Q2
+                /*
+                 * Define a struct "Person" with properties "Name" and "Age". Create an array of three "Person" objects and populate it with data. Then, write a C# program to display the details of all the persons in the array.
+
                 Person[] people = new Person[3];
 
                 people[0] = new Person("Ahmed", 25);
@@ -56,11 +67,49 @@ namespace Asigmment_oop01
                 for (int i = 0; i < people.Length; i++)
                 {
                     Console.WriteLine($"Name: {people[i].Name}, Age: {people[i].Age}");
-                }
+                }*/
                 #endregion
 
+                #region Q3
+                //Create an enum called "Seas on" with the four seasons (Spring, Summer, Autumn, Winter) as its members. Write a C# program that takes a season name as input from the user and displays the corresponding month range for that season. Note range for seasons ( spring march to may , summer june to august , autumn September to November , winter December to February)
 
+                Console.WriteLine("write any season: Spring, Summer, Autumn, Winter");
+                string userInput = Console.ReadLine();
+
+                Season s;
+
+                if (Enum.TryParse(userInput, true, out s))
+                {
+                    Console.WriteLine(); 
+                    switch (s)
+                    {
+                        case Season.Spring:
+                            Console.WriteLine("spring march to may");
+                            break;
+                        case Season.Summer:
+                            Console.WriteLine("summer june to august");
+                            break;
+                        case Season.Autumn:
+                            Console.WriteLine("autumn September to November");
+                            break;
+                        case Season.Winter:
+                            Console.WriteLine("winter December to February ");
+                            break;
+                        default:
+                            Console.WriteLine("Erorr");
+                            break;
+                    }
+                }
+                else
+                {
+                    Console.WriteLine("try again");
+                }
+
+               
             }
         }
     }
+    #endregion
+
 }
+        
