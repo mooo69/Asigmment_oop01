@@ -44,6 +44,19 @@ namespace Asigmment_oop01
         }
         //=========================================================
         //Q5
+
+        struct Point
+        {
+            public double X;
+            public double Y;
+
+            public Point(double x, double y)
+            {
+                X = x;
+                Y = y;
+            }
+        }
+
         class Program
         {
 
@@ -156,11 +169,31 @@ namespace Asigmment_oop01
 
             #endregion
 
-            #region Q5
+                #region Q5
+            Console.WriteLine("Enter coordinates for Point 1:");
+            Console.Write("X1: ");
+            double x1 = Convert.ToDouble(Console.ReadLine());
+            Console.Write("Y1: ");
+            double y1 = Convert.ToDouble(Console.ReadLine());
 
-            #endregion
+            Console.WriteLine("Enter coordinates for Point 2:");
+            Console.Write("X2: ");
+            double x2 = Convert.ToDouble(Console.ReadLine());
+            Console.Write("Y2: ");
+            double y2 = Convert.ToDouble(Console.ReadLine());
 
+            Point p1 = new Point(x1, y1);
+            Point p2 = new Point(x2, y2);
 
+            double distance = Math.Sqrt(Math.Pow(p2.X - p1.X, 2) + Math.Pow(p2.Y - p1.Y, 2));
+
+            Console.WriteLine($"Distance between the two points: {distance}");
         }
     }
 }
+            #endregion
+
+
+
+        
+    
