@@ -34,6 +34,16 @@ namespace Asigmment_oop01
             Autumn,
             Winter
         }
+        //=========================================================
+        //Q4
+        enum Colors
+        {
+            Red,
+            Green,
+            Blue
+        }
+        //=========================================================
+        //Q5
         class Program
         {
 
@@ -80,7 +90,7 @@ namespace Asigmment_oop01
 
                 if (Enum.TryParse(userInput, true, out s))
                 {
-                    Console.WriteLine(); 
+                    Console.WriteLine();
                     switch (s)
                     {
                         case Season.Spring:
@@ -105,11 +115,52 @@ namespace Asigmment_oop01
                     Console.WriteLine("try again");
                 }
 
-               
+
             }
         }
-    }
-    #endregion
 
+        #endregion
+
+                #region Q4
+        //Create an enum called "Colors" with the basic colors (Red, Green, Blue) as its members. Write a C# program that takes a color name as input from the user and displays a message indicating whether the input color is a primary color or not.
+
+        static void Main(string[] args)
+        {
+            Console.Write("Enter a color name (Red, Green, Blue): ");
+            string input = Console.ReadLine();
+
+            Colors selected;
+
+            if (Enum.TryParse(input, true, out selected))
+            {
+                if (selected == Colors.Red || selected == Colors.Blue)
+                {
+                    Console.WriteLine("Yep, that's a primary color.");
+                }
+                else if (selected == Colors.Green)
+                {
+                    Console.WriteLine("Green is kind of tricky... not always considered primary.");
+                }
+            }
+            else
+            {
+                Console.WriteLine("That color isn’t in the list. Try something like 'Red'.");
+            }
+
+            Console.WriteLine("\nPress any key to exit.");
+            Console.ReadKey();
+
+
+
+
+
+            #endregion
+
+            #region Q5
+
+            #endregion
+
+
+        }
+    }
 }
-        
